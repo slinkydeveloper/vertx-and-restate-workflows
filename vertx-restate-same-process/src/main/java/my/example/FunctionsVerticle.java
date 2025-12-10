@@ -1,4 +1,4 @@
-package my.example.vertx;
+package my.example;
 
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.json.JsonObject;
