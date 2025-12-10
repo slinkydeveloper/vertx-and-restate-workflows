@@ -42,15 +42,12 @@ public class UpdateWorkflow {
     }
 
     private JsonObject callFunction(String function, JsonObject req) throws Exception {
-        // Call the CallFunctionHandler on the Vert.x side
+        // Call the functions exposed on the Vert.x event bus
         var vertxFuture = vertx.eventBus()
                 .<JsonObject>request(function, req)
                 .toCompletionStage()
                 .toCompletableFuture();
-
-        var response = vertxFuture.get();
-
-        return response.body();
+        return vertxFuture.get().body();
     }
 
 }

@@ -10,7 +10,7 @@ import io.vertx.core.json.jackson.VertxModule;
 class CustomJacksonSerdeFactory extends JacksonSerdeFactory {
   public CustomJacksonSerdeFactory() {
     super(new ObjectMapper()
-            // Add to Jackson ObjectMapper the Vert.x module, to serialize/deserialize Vert.x JSON types
+            // Add to Jackson ObjectMapper the Vert.x module to serialize/deserialize Vert.x JSON types
             .registerModule(new VertxModule()));
   }
 }
